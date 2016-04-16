@@ -1712,7 +1712,7 @@ name := $(TARGET_PRODUCT)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   name := $(name)_debug
 endif
-name := krexus_mm-$(shell date +"%y%m%d")-$(TARGET_DEVICE)
+name := krexus_mm-caf-$(shell date +"%y%m%d")-$(TARGET_DEVICE)
 #Automatic build number revisioning: the command searches for the number of zips with the same name and increments the r$(build_no) of the name accordingly
 build_no := $(shell echo $$(( $(shell find $(PRODUCT_OUT) -maxdepth 1 -type f -name "$(name)*.zip" | wc -l) + 1 )))
 ifneq ($(build_no),1)
@@ -1738,7 +1738,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) $(DISTTOOLS)
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 
 	$(hide) $(MD5SUM) $(INTERNAL_OTA_PACKAGE_TARGET) > $(INTERNAL_OTA_PACKAGE_TARGET).md5sum
-	@echo -e ${CL_CYN}"=============== $$(echo $(TARGET_PRODUCT) | sed 's/\([a-z]\)\([a-zA-Z0-9]*\)/\u\1\2/g' | cut -d'_' -f1) OTA package: COMPLETE ==============="${CL_RST}
+	@echo -e ${CL_CYN}"============= $$(echo $(TARGET_PRODUCT) | sed 's/\([a-z]\)\([a-zA-Z0-9]*\)/\u\1\2/g' | cut -d'_' -f1)-CAF OTA package: COMPLETE =============="${CL_RST}
 	@echo -e ${CL_CYN}"ZIP: "${CL_CYN} $$(basename $(INTERNAL_OTA_PACKAGE_TARGET))${CL_RST}
 	@echo -e ${CL_CYN}"MD5: "${CL_CYN}" `cat $(INTERNAL_OTA_PACKAGE_TARGET).md5sum | cut -d ' ' -f 1`"${CL_RST}
 	@echo -e ${CL_CYN}"Size:"${CL_CYN}" `ls -la --si $(INTERNAL_OTA_PACKAGE_TARGET) | cut -d ' ' -f 5`"${CL_RST}

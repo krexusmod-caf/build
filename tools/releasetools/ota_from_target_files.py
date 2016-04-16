@@ -610,7 +610,7 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     version = GetBuildProp("ro.build.version.release", OPTIONS.info_dict)
 
     script.Print("***********************************************");
-    script.Print("                Krexus %s"%(version));
+    script.Print("             Krexus-CAF %s"%(version));
     script.Print("     Device: %s"%(model));
     script.Print("     Number: %s"%(build));
     script.Print("     Compiled: %s"%(date));
