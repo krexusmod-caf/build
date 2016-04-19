@@ -42,11 +42,11 @@ except ImportError:
 DEBUG = False
 default_manifest = ".repo/manifest.xml"
 
-custom_local_manifest = ".repo/local_manifests/slim_manifest.xml"
-custom_default_revision = "lp5.0"
-custom_dependencies = "slim.dependencies"
-org_manifest = "SlimRoms"  # leave empty if org is provided in manifest
-org_display = "SlimRoms"  # needed for displaying
+custom_local_manifest = ".repo/local_manifests/krexus_roomservice.xml"
+custom_default_revision = "caf"
+custom_dependencies = "krexus.dependencies"
+org_manifest = "krexus-caf"  # leave empty if org is provided in manifest
+org_display = "Krexus-CAF"  # needed for displaying
 
 github_auth = None
 
