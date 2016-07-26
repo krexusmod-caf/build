@@ -46,7 +46,7 @@ custom_local_manifest = ".repo/local_manifests/krexus_roomservice.xml"
 custom_default_revision = "caf"
 custom_dependencies = "krexus.dependencies"
 org_manifest = "krexusmod-caf"  # leave empty if org is provided in manifest
-org_display = "KrexusMod-CAF"  # needed for displaying
+org_display = "krexusmod-caf"  # needed for displaying
 
 github_auth = None
 
